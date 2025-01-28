@@ -6,6 +6,7 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello World! This is the Journal Project.");
+
         Journal journal = new Journal();
         bool running = true;
 
@@ -141,3 +142,7 @@ public class Journal
     }
 }
 
+=
+    }
+}
+>>>>>>>a6ac0970d5c88d197e6beee725b89b9147509
