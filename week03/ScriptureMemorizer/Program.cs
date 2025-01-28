@@ -1,9 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 class Program
 {
+
     static void Main(string[] args)
     {
         Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
@@ -35,110 +34,6 @@ class Program
         {
             Console.WriteLine("There are still visible words.");
         }
-    }
-}
-
-public class Word
-{
-    private string _text;
-    private bool _isHidden;
-
-    public Word(string text)
-    {
-        _text = text;
-        _isHidden = false; // Default visibility
-    }
-
-    public void Hide()
-    {
-        _isHidden = true;
-    }
-
-    public void Show()
-    {
-        _isHidden = false;
-    }
-
-    public bool IsHidden()
-    {
-        return _isHidden;
-    }
-
-    public string GetDisplayText()
-    {
-        return _isHidden ? "_____" : _text; // Show the word or a blank line
-    }
-}
-
-public class Reference
-{
-    private string _book;
-    private int _chapter;
-    private int _verse;
-    private int _endVerse;
-
-    public Reference(string book, int chapter, int verse)
-    {
-        _book = book;
-        _chapter = chapter;
-        _verse = verse;
-        _endVerse = verse; // Default to single verse
-    }
-
-    public Reference(string book, int chapter, int startVerse, int endVerse)
-    {
-        _book = book;
-        _chapter = chapter;
-        _verse = startVerse;
-        _endVerse = endVerse;
-    }
-
-    public string GetDisplayText()
-    {
-        return $"{_book} {_chapter}:{_verse}" + (_endVerse > _verse ? $"-{_endVerse}" : "");
-    }
-}
-
-public class Scripture
-{
-    private Reference _reference;
-    private List<Word> _words;
-
-    public Scripture(Reference reference, string text)
-    {
-        _reference = reference;
-        _words = new List<Word>();
-        var wordList = text.Split(' '); // Split the text into words
-
-        foreach (var word in wordList)
-        {
-            _words.Add(new Word(word));
-        }
-    }
-
-    public void HideRandomWords(int numberToHide)
-    {
-        var rand = new Random();
-        int hidden = 0;
-        while (hidden < numberToHide)
-        {
-            var index = rand.Next(_words.Count);
-            if (!_words[index].IsHidden())
-            {
-                _words[index].Hide();
-                hidden++;
-            }
-        }
-    }
-
-    public string GetDisplayText()
-    {
-        return string.Join(" ", _words.Select(w => w.GetDisplayText()));
-    }
-
-    public bool IsCompletelyHidden()
-    {
-        return _words.All(w => w.IsHidden());
     }
 }
 
