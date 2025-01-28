@@ -1,18 +1,17 @@
 using System;
-<<<<<<< HEAD
-=======
+
 using System.Collections.Generic;
->>>>>>> b0c3c29 (Initial commit)
+
 
 class Program
 {
     static void Main(string[] args)
     {
         Console.WriteLine("Hello World! This is the Resumes Project.");
-<<<<<<< HEAD
+<
     }
 }
-=======
+
 
         // Create the first job
         Job Job1 = new Job
@@ -93,4 +92,3 @@ class Resume
 
 
 
->>>>>>> b0c3c29 (Initial commit)
