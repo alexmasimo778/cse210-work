@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-//Creating journal class:
 public class Journal
 {
     private List<JournalEntry> entries = new List<JournalEntry>();
@@ -32,7 +31,7 @@ public class Journal
             Console.WriteLine(entry.ToString());
         }
     }
-//saving to file newfile the data entry
+
     public void SaveToFile(string filename)
     {
         using (StreamWriter writer = new StreamWriter(filename))
@@ -56,4 +55,3 @@ public class Journal
             }
         }
     }
-}
