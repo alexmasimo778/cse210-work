@@ -1,0 +1,18 @@
+namespace ExerciseTracking
+{
+    public class Running : Activity
+    {
+        public Running(string date, double duration, double distance) 
+            : base(date, duration)
+        {
+            Distance = distance;
+        }
+
+        public double Distance { get; set; }
+
+        public override string GetSummary()
+        {
+            return $"{Date}: Running {Distance} km in {Duration} minutes.";
+        }
+    }
+}
